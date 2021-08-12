@@ -1,10 +1,13 @@
 import React from 'react'
+import { IonButton, IonIcon, IonContent } from '@ionic/react';
 
-const Button = ({children}) => {
+const Button = ({ children, onClick }) => {
     return (
-        <button className='font-medium text-xl sm:text-2xl uppercase w-60 text-center bg-indigo-600 focus:bg-indigo-500 hover:bg-indigo-500 shadow-2xl p-4 rounded-full text-white focus:outline-none'>
+        <IonButton onClick={onClick} shape="round" size='large'
+        >
             {children}
-        </button>
+        </IonButton>
+        
     )
 }
 

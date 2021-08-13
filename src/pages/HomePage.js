@@ -5,15 +5,16 @@ import { IonCardContent, IonCard } from '@ionic/react'
 const HomePage = () => {
     const API_KEY = '43809593cd4fd991205d21be2120e27e'
     const [city, setCity] = useState('seattle')
+    const [data, setData] = useState(null)
 
-    // useEffect(() => {
-    //     async function fetch() {
-    //         fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial&cnt=40`)
-    //         .then(res => res.json())
-    //         .then(res => setData([res]))
-    //     }
-    //     fetch()
-    // }, [])
+    useEffect(() => {
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial&cnt=40`)
+        .then(res => res.json())
+        .then(response => {
+            console.log(response)
+            setData(response)
+        })
+    }, [])
 
     
     return (
@@ -23,13 +24,11 @@ const HomePage = () => {
                 EXPLORE
             </Button>
 
-            {/* {data.map(data =>
                 <IonCard>
                     <IonCardContent>
-                        {data.main.temp}
+                        {data.city.name}
                     </IonCardContent>
                 </IonCard>
-            )} */}
         </div>
     )
 }

@@ -39,9 +39,7 @@ const Header = () => {
                 onClick={handleSignIn} >
                     SIGN IN
                 </button>
-            )}
-
-            
+            )}            
         </div>
     )
 }

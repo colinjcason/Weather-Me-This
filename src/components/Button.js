@@ -1,11 +1,10 @@
 import React from 'react'
-import { IonButton } from '@ionic/react';
 
-const Button = ({ children, onClick }) => {
+const Button = ({ children, onClick, ...otherProps }) => {
     return (
-        <IonButton onClick={onClick} shape="round" size='large'>
+        <button onClick={onClick} {...otherProps}>
             {children}
-        </IonButton>
+        </button>
         
     )
 }

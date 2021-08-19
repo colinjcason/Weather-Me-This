@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Button from '../components/Button'
-import Load from '../components/Loader'
+import Spinner from '../components/Spinner'
+import useDarkMode from '../hook/useDarkMode'
 
 const HomePage = () => {
+    // useDarkMode();
     const API_KEY = '43809593cd4fd991205d21be2120e27e'
     const [city, setCity] = useState('seattle')
     const [data, setData] = useState({})
@@ -21,15 +23,16 @@ const HomePage = () => {
 
     
     return (
-        <div className='h-screen flex flex-col justify-center items-center space-y-10'>
-            <h1 className='text-5xl font-bold uppercase'>Discover the Weather</h1>
-            <Button className='font-medium self-center text-xl sm:text-2xl uppercase w-60 text-center bg-indigo-500 shadow-2xl p-6 rounded-full text-white'>
-                EXPLORE
-            </Button>
-
-            {isLoading ? <Load /> : (
-                <div>
-                   {data.city.name}
+        <div>
+            {isLoading ? <Spinner /> : (
+                <div className='h-screen flex flex-col justify-center items-center space-y-10'>
+                    <h1 className='text-5xl font-bold uppercase'>Discover the Weather</h1>
+                    <Button className='font-medium self-center text-xl sm:text-2xl uppercase w-60 text-center bg-indigo-500 shadow-2xl p-6 rounded-full text-gray-50 dark:text-black'>
+                        EXPLORE
+                    </Button>
+                    <div>
+                    {data.city.name}
+                    </div>
                 </div>
             )}
         </div>

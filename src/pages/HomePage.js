@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Button from '../components/Button'
 import Spinner from '../components/Spinner'
 import useDarkMode from '../hook/useDarkMode'
+import Card from '../components/Card'
 
 const HomePage = () => {
     // useDarkMode();
@@ -26,13 +27,13 @@ const HomePage = () => {
         <div>
             {isLoading ? <Spinner /> : (
                 <div className='h-screen flex flex-col justify-center items-center space-y-10'>
-                    <h1 className='text-5xl font-bold uppercase'>Discover the Weather</h1>
-                    <Button className='font-medium self-center text-xl sm:text-2xl uppercase w-60 text-center bg-indigo-500 shadow-2xl p-6 rounded-full text-gray-50 dark:text-black'>
-                        EXPLORE
+                    <h1 className='text-5xl font-bold'>welcome to coolWeather</h1>
+                    <Button className='font-bold uppercase self-center text-xl sm:text-2xl w-60 text-center bg-indigo-500 shadow-2xl p-6 rounded-full text-gray-50'>
+                        explore
                     </Button>
-                    <div>
-                    {data.city.name}
-                    </div>
+                    <Card>
+                        {data.city.name}
+                    </Card>
                 </div>
             )}
         </div>

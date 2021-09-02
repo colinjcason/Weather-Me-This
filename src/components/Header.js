@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import Button from './Button'
 import { signInWithGoogle, signOut } from '../firebase/firebase.utils.js'
 import useDarkMode from '../hook/useDarkMode'
+import { useHistory } from 'react-router'
 
-const Header = ({ history }) => {
+const Header = () => {
+    let history = useHistory()
     const [colorTheme, setTheme] = useDarkMode()
     const [user, setUser] = useState()
 
@@ -17,7 +19,7 @@ const Header = ({ history }) => {
 
     const handleSignOut = () => {
         signOut().then(() => setUser(''));
-        history.push('/explore')
+        history.push('/')
     }
 
     return (

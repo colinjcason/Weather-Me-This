@@ -33,15 +33,15 @@ const HomePage = () => {
                 setIsLoading(false)
                 console.log(data)
             }).catch(error => console.log(error))
-    }, [cityOne, cityTwo])
+    }, [cityOne, cityTwo, cityThree, cityFour, cityFive])
 
     
     return (
         <div>
             {isLoading ? <Spinner /> : (
-                <div className='h-screen flex flex-col justify-center items-center space-y-10'>
+                <div className='flex flex-col items-center justify-center h-screen space-y-10'>
                     <h1 className='text-5xl font-bold'>Welcome to coolWeather</h1>
-                    <Button className='font-bold uppercase self-center text-xl sm:text-2xl w-60 text-center bg-indigo-500 shadow-2xl p-6 rounded-full text-gray-50'>
+                    <Button className='self-center p-6 text-xl font-bold text-center uppercase bg-indigo-500 rounded-full shadow-2xl sm:text-2xl w-60 text-gray-50'>
                         explore
                     </Button>
                     <div className='flex space-x-10'>

@@ -1,3 +1,7 @@
 body {
   background-color: rgba(249, 250, 251);
+  background: url('./assets/Untitled.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
